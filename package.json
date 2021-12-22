@@ -11,14 +11,14 @@
     "packages"
   ],
   "scripts": {
-    "dev": "vitepress dev example",
+    "dev": "vitepress dev website",
     "build": "NODE_ENV=production rollup -c build/rollup.config.comps.js",
-    "build:demos": "vite build -c=example/.vitepress/markdown/plugin/build-demos.vite.config.ts",
-    "build:docs": "vitepress build example && npm run build:demos",
+    "build:demos": "vite build -c=website/.vitepress/markdown/plugin/build-demos.vite.config.ts",
+    "build:docs": "vitepress build website && npm run build:demos",
     "predev": "check-versions && ([ -d es ] || npm run build) && patch-package",
     "prebuild": "check-versions && rm -rf es cjs && patch-package",
     "prebuild:docs": "([ -d es ] || npm run build) && patch-package",
-    "postbuild:docs": "mv example/.vitepress/dist/ docs/",
+    "postbuild:docs": "mv website/.vitepress/dist/ docs/",
     "preversion": "scripts/check-version-bump.js && npm run build",
     "version": "conventional-changelog --skip-unstable -p angular -i changelog.md -s && git add changelog.md",
     "prepublishOnly": "scripts/check-dist-tag.js",

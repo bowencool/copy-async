@@ -11,7 +11,7 @@ const fixEntry = (entry: string) => {
   return entry;
 };
 export const genHtml = (meta: IframeMeta) => {
-  const customCss = resolve(process.cwd(), 'example/.vitepress/theme/custom.scss');
+  const customCss = resolve(process.cwd(), 'website/.vitepress/theme/custom.scss');
   const devTip = (process.env.NODE_ENV === 'development'
     ? `console.log('iframe 模式自动挂载了一个vue组件：%o', module.default.__file || module.default);console.log('如果你不希望自动挂载，移除 export default');`
     : '');

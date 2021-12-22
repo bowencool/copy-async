@@ -49,8 +49,8 @@ const iframeConfig: UserConfig = {
   base: vitepressConfig.base,
   build: {
     emptyOutDir: false,
-    outDir: 'example/.vitepress/dist',
-    // outDir: resolve(process.cwd(), 'example/.vitepress/dist/~demos'),
+    outDir: 'website/.vitepress/dist',
+    // outDir: resolve(process.cwd(), 'website/.vitepress/dist/~demos'),
     rollupOptions: {
       input: {},
     },
