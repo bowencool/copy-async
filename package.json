@@ -18,6 +18,7 @@
     "predev": "check-versions && ([ -d es ] || npm run build) && patch-package",
     "prebuild": "check-versions && rm -rf es cjs && patch-package",
     "prebuild:docs": "([ -d es ] || npm run build) && patch-package",
+    "postbuild:docs": "mv example/.vitepress/dist/ docs/",
     "preversion": "scripts/check-version-bump.js && npm run build",
     "version": "conventional-changelog --skip-unstable -p angular -i changelog.md -s && git add changelog.md",
     "prepublishOnly": "scripts/check-dist-tag.js",
