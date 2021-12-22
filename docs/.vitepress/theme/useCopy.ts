@@ -1,8 +1,8 @@
 import type { MaybeRef } from '@vueuse/shared';
 import { useTimeoutFn } from '@vueuse/shared';
 import { ref, unref } from 'vue';
-import type { CopyOptions } from './copy';
-import { copy } from './copy';
+import type { CopyOptions } from '../../../packages/copy';
+import { copy } from '../../../packages/copy';
 
 type copyBaseProps = CopyOptions & {
   text: MaybeRef<string | HTMLElement>; // 拷贝到剪切板里的文本或 HTML 元素

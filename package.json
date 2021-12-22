@@ -1,7 +1,7 @@
 {
-  "name": "todo",
+  "name": "copy-async",
   "version": "0.1.0",
-  "description": "todo",
+  "description": "copy text or html element to clipboard",
   "main": "cjs/index.js",
   "module": "es/index.js",
   "typings": "es/index.d.ts",
@@ -25,11 +25,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@todo"
+    "url": "git@github.com:bowencool/copy-async.git"
   },
-  "homepage": "todo",
+  "homepage": "https://github.com/bowencool/copy-async",
   "keywords": [
-    "todo"
+    "copy",
+    "clipboard",
+    "text",
+    "html element",
+    "rich text",
+    "promise",
+    "async"
   ],
   "engines": {
     "node": ">= 14.0.0",
