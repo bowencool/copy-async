@@ -1,0 +1,8 @@
+{
+  "vetur.format.styleInitialIndent": true,
+  "vetur.format.scriptInitialIndent": true,
+  "stylelint.enable": true,
+  "files.exclude": {
+    "docs/components": true
+  }
+}
