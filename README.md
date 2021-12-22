@@ -1,6 +1,6 @@
 # copy-async
 
-复制文本、富文本到剪切板
+复制文本、富文本到剪切板，[WebSite](https://bowencool.github.io/copy-async/)
 
 # usage
 
