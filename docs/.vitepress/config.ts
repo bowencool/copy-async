@@ -10,8 +10,8 @@ export const config: UserConfig = {
   // mpa: true,
   // base: '/docs',
   lang: 'zh-CN',
-  title: 'Todo',
-  description: 'todo',
+  title: process.env.npm_package_name || 'Todo',
+  description: process.env.npm_package_description || 'Todo',
 
   // https://vitepress.vuejs.org/guide/markdown.html#advanced-configuration
   markdown: {

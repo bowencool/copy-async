@@ -4,7 +4,7 @@ import rollupReplace from '@rollup/plugin-replace';
 import OptimizationPersist from 'vite-plugin-optimize-persist';
 import PkgConfig from 'vite-plugin-package-config';
 import { VitePlugin as TsChecker } from 'vite-esbuild-typescript-checker';
-import eslintPlugin from 'vite-plugin-eslint';
+// import eslintPlugin from 'vite-plugin-eslint';
 import { resolve } from 'path';
 // import eslintPlugin from 'vite-plugin-eslint';
 import demoIframe from './.vitepress/markdown/plugin/vite-plugin-dev-demo-iframe';
@@ -57,10 +57,10 @@ const config: UserConfig = {
           },
         },
       }),
-    process.env.NODE_ENV === 'development' &&
-      eslintPlugin({
-        include: 'packages/**/*.{vue,js,jsx,ts,tsx}',
-      }),
+    // process.env.NODE_ENV === 'development' &&
+    //   eslintPlugin({
+    //     include: 'packages/**/*.{vue,js,jsx,ts,tsx}',
+    //   }),
   ],
 };
 export default config;

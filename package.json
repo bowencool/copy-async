@@ -17,7 +17,6 @@
     "build:docs": "vitepress build docs && npm run build:demos",
     "predev": "check-versions && ([ -d es ] || npm run build) && patch-package",
     "prebuild": "check-versions && rm -rf es cjs && patch-package",
-    "postbuild": "node build/fix-types",
     "prebuild:docs": "([ -d es ] || npm run build) && patch-package",
     "preversion": "scripts/check-version-bump.js && npm run build",
     "version": "conventional-changelog --skip-unstable -p angular -i changelog.md -s && git add changelog.md",
