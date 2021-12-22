@@ -1,7 +1,7 @@
 {
-  "name": "copy-async",
+  "name": "copy-text-or-rich-text-to-clipboard-async",
   "version": "0.1.0",
-  "description": "copy text or html element to clipboard",
+  "description": "copy text or rich text to clipboard",
   "main": "cjs/index.js",
   "module": "es/index.js",
   "typings": "es/index.d.ts",
