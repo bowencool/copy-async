@@ -10,5 +10,4 @@ storybook-static
 coverage/
 cjs/
 es/
-*.html
 demos.json
