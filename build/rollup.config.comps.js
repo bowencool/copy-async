@@ -15,6 +15,19 @@ const componentsConfig = defineConfig([
       },
     ],
   },
+  {
+    ...genBaseConfig(),
+    input: `${INPUT_PATH}/index.ts`,
+    output: [
+      {
+        // file: 'es/index.js',
+        dir: 'cjs',
+        format: 'cjs',
+        preserveModules: true,
+        preserveModulesRoot: 'packages',
+      },
+    ],
+  },
 ]);
 
 export default componentsConfig;
