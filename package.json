@@ -11,10 +11,10 @@
     "packages"
   ],
   "scripts": {
-    "dev": "vitepress dev docs",
+    "dev": "vitepress dev example",
     "build": "NODE_ENV=production rollup -c build/rollup.config.comps.js",
-    "build:demos": "vite build -c=docs/.vitepress/markdown/plugin/build-demos.vite.config.ts",
-    "build:docs": "vitepress build docs && npm run build:demos",
+    "build:demos": "vite build -c=example/.vitepress/markdown/plugin/build-demos.vite.config.ts",
+    "build:docs": "vitepress build example && npm run build:demos",
     "predev": "check-versions && ([ -d es ] || npm run build) && patch-package",
     "prebuild": "check-versions && rm -rf es cjs && patch-package",
     "prebuild:docs": "([ -d es ] || npm run build) && patch-package",

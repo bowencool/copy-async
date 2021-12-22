@@ -3,6 +3,6 @@
   "vetur.format.scriptInitialIndent": true,
   "stylelint.enable": true,
   "files.exclude": {
-    "docs/components": true
+    "example/components": true
   }
 }

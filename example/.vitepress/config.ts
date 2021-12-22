@@ -4,6 +4,7 @@ import markdownItCheckbox from 'markdown-it-checkbox';
 import markdownItDemo from './markdown/plugin/markdown-it-demo';
 
 export const config: UserConfig = {
+  base: process.env.NODE_ENV === 'production' ? '/copy-async/' : '/',
   lang: 'zh-CN',
   title: process.env.npm_package_name,
   description: process.env.npm_package_description,

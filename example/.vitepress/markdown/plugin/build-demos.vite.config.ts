@@ -5,12 +5,7 @@ import { readFileSync, existsSync } from 'fs';
 import { resolve } from 'path';
 import { execSync } from 'child_process';
 import { genHtml } from './genIframe';
-
-// config.plugins = config.plugins?.filter((p) => {
-//   if (!p) return false;
-//   if (Array.isArray(p)) return true;
-//   return p.name !== 'demo-iframe';
-// });
+import { config as vitepressConfig } from '../../config';
 
 const demos: Record<string, { entry: string; title?: string }> = JSON.parse(
   readFileSync(__dirname + '/demos.json', 'utf-8'),
@@ -51,10 +46,11 @@ const iframeConfig: UserConfig = {
     },
   ],
   // base: '/~demos/',
+  base: vitepressConfig.base,
   build: {
     emptyOutDir: false,
-    outDir: 'docs/.vitepress/dist',
-    // outDir: resolve(process.cwd(), 'docs/.vitepress/dist/~demos'),
+    outDir: 'example/.vitepress/dist',
+    // outDir: resolve(process.cwd(), 'example/.vitepress/dist/~demos'),
     rollupOptions: {
       input: {},
     },

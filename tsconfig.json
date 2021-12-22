@@ -14,11 +14,11 @@
     "baseUrl": ".",
     "paths": {
       "packages/*": ["packages/*"],
-      "@/*": ["docs/*"]
+      "@/*": ["example/*"]
     },
     "lib": ["esnext", "dom", "dom.iterable"]
   },
   "include": ["packages/**/*.ts", "packages/**/*.tsx", "packages/**/*.vue", "typings/**/*"],
-  "exclude": ["node_modules", "cjs", "es", "docs"],
+  "exclude": ["node_modules", "cjs", "es", "example"],
   "locale": "zh-CN"
 }
