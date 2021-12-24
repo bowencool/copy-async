@@ -38,7 +38,6 @@ const config: UserConfig = {
     PkgConfig(),
     OptimizationPersist(),
     vueJsx(),
-    // @ts-ignore
     rollupReplace({ values: replacement, preventAssignment: true }),
     demoIframe(),
     process.env.NODE_ENV === 'development' &&

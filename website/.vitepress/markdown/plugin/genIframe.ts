@@ -4,7 +4,7 @@ export type IframeMeta = {
   title?: string;
   entry: string;
 };
-const fixEntry = (entry: string) => {
+const autoEntry = (entry: string) => {
   if (process.env.NODE_ENV === 'development') {
     return `/@fs/${entry}`;
   }
@@ -22,13 +22,13 @@ export const genHtml = (meta: IframeMeta) => {
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>${meta.title}</title>
-    <!-- <link rel="stylesheet" href="${fixEntry(customCss)}"> -->
+    <!-- <link rel="stylesheet" href="${autoEntry(customCss)}"> -->
     <style>body { margin: 0;}</style>
   </head>
   <body>
     <script type="module">
       (async () => {
-        const module = await import("${fixEntry(meta.entry)}");
+        const module = await import("${autoEntry(meta.entry)}");
         if (module.default) {
           const { createApp } = await import('vue');
           const app = createApp(module.default);

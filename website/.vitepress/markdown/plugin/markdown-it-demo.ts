@@ -11,6 +11,7 @@ const scriptSetupRE = /<\s*script[^>]*\bsetup\b[^>]*/;
 const attrRE = /\b(?<key>\w+)(="(?<value>[^"]*)")?/g;
 const demoContainer = 'DemoContainer';
 
+/** 解析 a="1" b="2" 这种格式的字符串，返回一个对象 */
 function parseAttrs(attrs: string) {
   const meta = {};
   let rez = null;
@@ -28,6 +29,7 @@ function parseAttrs(attrs: string) {
   return meta;
 }
 
+/** 在script里添加组件引入语句 */
 function addImportDeclaration(hoistedTags, localName: string, source: string) {
   const existingScriptIndex = hoistedTags.findIndex((tag) => {
     return scriptSetupRE.test(tag);
@@ -41,6 +43,8 @@ function addImportDeclaration(hoistedTags, localName: string, source: string) {
     );
   }
 }
+
+/** 在script里添加变量声明语句 */
 function addVariableDeclaration(hoistedTags, localName: string, express: string) {
   const existingScriptIndex = hoistedTags.findIndex((tag) => {
     return scriptSetupRE.test(tag);
@@ -62,6 +66,7 @@ type FileDTO = {
   language: string;
 };
 
+/** 读取文件内容，返回统一格式。如果文件不存在，智能推测文件名，如果没有推测出来，返回null */
 function resolveFile(absolutePath): FileDTO | null {
   // console.log(absolutePath);
   if (!absolutePath) return null;
@@ -90,17 +95,18 @@ function resolveFile(absolutePath): FileDTO | null {
 }
 
 const demos = {};
+/** 将demo信息拼接成 html(vue template) 字符串 */
 function genDemo(meta, md: MarkdownIt) {
   // @ts-ignore
   const { urlPath, __data: data } = md;
   const hoistedTags = data.hoistedTags || (data.hoistedTags = []);
   // console.log('meta: ', meta);
   let htmlOpenString = `<${demoContainer}`;
-// <DemoContainer
+  // <DemoContainer
   let attrsStr = '';
   if (meta.title) {
     attrsStr += ` title="${meta.title}"`;
-// <DemoContainer title="基本使用"
+    // <DemoContainer title="基本使用"
   }
   if (meta.desc) {
     const rez = md.renderInline(meta.desc);
@@ -151,16 +157,16 @@ function genDemo(meta, md: MarkdownIt) {
       // const isSymbolicLink = fs.lstatSync(absolutePath).isSymbolicLink()
       attrsStr += ` iframe`;
       demos[localName] = { title: meta.title, entry: absolutePath };
-      fs.writeFileSync(path.resolve(__dirname, 'demos.json'), JSON.stringify(demos, null, 2));
+      fs.writeFileSync(path.resolve(process.cwd(), 'node_modules/demos.json'), JSON.stringify(demos, null, 2));
       htmlOpenString += ` ${attrsStr}><iframe src="/~demos/${localName}.html"`;
-// <DemoContainer title="基本使用" ><iframe src="/~demos/${localName}.html"`
+      // <DemoContainer title="基本使用" ><iframe src="/~demos/${localName}.html"`
       if (meta.iframeHeight) {
         htmlOpenString += ` height="${meta.iframeHeight}"`;
       }
       htmlOpenString += '/>';
     } else {
       addImportDeclaration(hoistedTags, localName, meta.src);
-// <DemoContainer title="基本使用" ><Demo1002 />
+      // <DemoContainer title="基本使用" ><Demo1002 />
       htmlOpenString += ` ${attrsStr}><${localName} />`;
     }
   }
@@ -184,6 +190,7 @@ export default (md: MarkdownIt) => {
     }
   };
 
+  // 这里为了复用代码，API 也设计成了一样的
   md.use(mdContainer, 'demo', {
     validate(params) {
       return !!params.trim().match(/^demo\s*(.*)$/);
