@@ -1,5 +1,5 @@
 {
-  "name": "copy-text-or-rich-text-to-clipboard-async",
+  "name": "copy-rich-text",
   "version": "0.2.0",
   "description": "copy text or rich text to clipboard",
   "main": "cjs/index.js",

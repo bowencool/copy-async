@@ -5,11 +5,11 @@
 # usage
 
 ```bash
-npm i copy-text-or-rich-text-to-clipboard-async
+npm i copy-rich-text
 ```
 
 ```js{3-6}
-import copy from 'copy-text-or-rich-text-to-clipboard-async';
+import copy from 'copy-rich-text';
 
 await copy('hello world');
 await copy('<h1>hello world</h1>');
