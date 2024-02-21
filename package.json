@@ -38,11 +38,6 @@
     "promise",
     "async"
   ],
-  "engines": {
-    "node": ">= 14.0.0",
-    "npm": "6 - 8",
-    "yarn": "^1.22.10"
-  },
   "author": "bowen",
   "license": "ISC",
   "devDependencies": {
