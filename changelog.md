@@ -1,3 +1,12 @@
+## [0.2.1](https://github.com/bowencool/copy-async/compare/v0.2.0...v0.2.1) (2024-02-21)
+
+
+### Bug Fixes
+
+* deps ([9f72963](https://github.com/bowencool/copy-async/commit/9f72963d5b8d213c190a97e60f9ef6afb84410df))
+
+
+
 # [0.2.0](https://github.com/bowencool/copy-async/compare/v0.1.1...v0.2.0) (2021-12-22)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "copy-rich-text",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "copy text or rich text to clipboard",
   "main": "cjs/index.js",
   "module": "es/index.js",
